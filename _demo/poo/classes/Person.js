@@ -7,7 +7,7 @@ class Person {
 
     sayHello() {
         console.log(this);
-        console.log(`Hello my name is ${this.firstname} ${this.lastname}`);
+        return `Hello my name is ${this.firstname} ${this.lastname}`;
     }
 
 }
