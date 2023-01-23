@@ -6,7 +6,7 @@ Ce programme sera représenté par une classe.
 Le but c'est :
 - de créer des balles
 - de les passer au programme (les ajouter à sa collection de balles)
-- d'appeler une méthode du programme pour qu'il ajoute toutes les balles présentent dans sa collection à l'obejt du DOM qui lui est transmis.
+- d'appeler une méthode du programme pour qu'il ajoute toutes les balles présentent dans sa collection à l'objet du DOM qui lui est transmis.
 
 On dit que ce programme est composé d'une collection de balles.
 

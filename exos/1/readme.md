@@ -15,7 +15,6 @@ Chaque balle doit avoir une méthode `draw()` qui permet de renvoyer une chaine 
 - Finalisez cette méthode `draw()` pour qu'elle nous renvoie l'HTML... puis injectez l'HTML dans le DOM.
 
 
-
 ```js
 // Exemple d'appel du code 
 

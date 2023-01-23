@@ -1,5 +1,3 @@
-
-
 class Ball {
 
     constructor(radius, x, y, color='black') {
