@@ -1,28 +1,45 @@
 class Ball {
 
+    /**
+     * 
+     * @param {Number} radius 
+     * @param {Number} x 
+     * @param {Number} y 
+     * @param {String} color 
+     */
     constructor(radius, x, y, color='black') {
         this.color = color;
-        this.x = x;
-        this.y = y;
         this.radius = radius;
+        this.position = {x:x,y:y};
+        this.direction = {x:1,y:1}
 
-        this.domObject = null;
-
-        this.setDomObject();
-    }
-
-    setDomObject(){
         this.domObject = document.createElement('div');
-        this.domObject.style =`position:relative;background-color:${this.color};border-radius:50%;width:${this.radius * 2}px;height:${this.radius * 2}px;top:${this.y}px;left:${this.x}px`;
+
+        this.setPositionDomObject();
     }
 
+    /**
+     * Défini les styles de l'objet DOM en fonction des propriétés !
+     */
+    setPositionDomObject(){
+        this.domObject.style = `position:relative;background-color:${this.color};border-radius:50%;width:${this.radius * 2}px;height:${this.radius * 2}px;top:${this.position.y}px;left:${this.position.x}px`;
+    }
+
+    /**
+     * Retourne la collection de balles
+     * @returns {Array}
+     */
     getDomObject() {
         return this.domObject;
     }
 
+    /**
+     * Déplace la balle en fonction de la direction
+     */
     move() {
-        this.x+=10;
-        this.domObject.style.left = `${this.x}px`;
+        this.position.x += 2 * this.direction.x;
+        this.position.y += 2 * this.direction.y;
+        this.setPositionDomObject();
     }
 
 }
