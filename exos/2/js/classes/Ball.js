@@ -22,7 +22,7 @@ class Ball {
      * Défini les styles de l'objet DOM en fonction des propriétés !
      */
     setPositionDomObject(){
-        this.domObject.style = `position:relative;background-color:${this.color};border-radius:50%;width:${this.radius * 2}px;height:${this.radius * 2}px;top:${this.position.y}px;left:${this.position.x}px`;
+        this.domObject.style = `position:absolute;background-color:${this.color};border-radius:50%;width:${this.radius * 2}px;height:${this.radius * 2}px;top:${this.position.y}px;left:${this.position.x}px`;
     }
 
     /**

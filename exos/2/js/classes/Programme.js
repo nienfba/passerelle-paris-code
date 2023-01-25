@@ -46,6 +46,16 @@ class Programme {
 
         if (previousHitbox != null) {
             // si les deux balles
+            if (hitBox.x < previousHitbox.x + previousHitbox.width &&
+                hitBox.x + hitBox.width > previousHitbox.x &&
+                hitBox.y < previousHitbox.y + previousHitbox.height &&
+                rect1.height + hitBox.y > previousHitbox.y) {
+                // collision détectée !
+                ball.direction.x *= -1;
+                ball.direction.y *= -1;
+
+
+            }
         }
         
         return hitBox;
