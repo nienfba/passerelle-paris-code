@@ -1,16 +1,7 @@
-
-
-const GAME_KEY = {
-    right: 39,
-    left: 37,
-    up: 38,
-    down: 40,
-    pause: 32,
-};
-
+import { GAME_KEY, GAME_SIZE } from "../params.js";
+import { Tail } from "./Tail.js";
 
 export class Snake {
-
 
     constructor() {
         /**
@@ -18,30 +9,36 @@ export class Snake {
         */
         this.domObject = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 
+        
+
         this.init();
         
-        this.initSvg();
+       
     }
 
     init() {
+        this.tail = new Tail();
         this.x = 10;
         this.y = 10;
-
+        this.initSvg();
     }
 
     initSvg() {
-
         this.domObject.setAttribute('width', 1);
         this.domObject.setAttribute('height', 1);
         this.domObject.setAttribute('x', this.x);
         this.domObject.setAttribute('y', this.y);
     }
     
-    getSvg() {
+    getDomObject() {
         return this.domObject;
     }
     
     move(direction) {
+
+        let oldX = this.x;
+        let oldY = this.y;
+        
         switch (direction) {
             case GAME_KEY.right:
                 this.x += 1;
@@ -58,5 +55,10 @@ export class Snake {
         }
 
         this.initSvg();
+
+        // On bouge la queue : première partie à la position de la tête!
+        return this.tail.move(oldX, oldY, this.x, this.y);
+
+        
     }
 }
