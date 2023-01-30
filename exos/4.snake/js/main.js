@@ -1,6 +1,6 @@
 import { SnakeGame } from "./classes/SnakeGame.js";
 
+/**
+ * On démarre le jeu !
+ */
 const game = new SnakeGame();
-
-const test = window.localStorage.getItem('snake.state');
-console.log(JSON.parse(test));

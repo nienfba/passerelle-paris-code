@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    border:0;
+    margin:0;
+}
+
+header {
+    width:100vw;
+    height: auto;
+    max-width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    margin:20px;
+}
+
+button {
+    position: absolute;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    padding: 1rem;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+div.slider-content {
+    position: relative;
+    background-color: black;
+}
+
+div.slider-content img {
+    display: block;
+    position: relative;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+div.slider-content button,
+button.hidden,
+slider-content:hover button.hidden,
+.hidden {
+    display: none;
+}
+
+div.slider-content:hover button {
+    display: block;
+}
+
+
+button.next {
+    right: 10px;
+    z-index: 500;
+    top: 45%;
+    
+}
+
+button.prev {
+    left: 10px;
+    z-index: 500;
+    top: 45%;
+    
+}
+
+button.rand {
+    left: 10px;
+    z-index: 500;
+    top: 10px;
+    
+    color: #FFF;
+    background: none;
+}
+
+button.play {
+    right: 10px;
+    top: 10px;
+    
+    color: #000;
+    z-index: 500;
+    background: rgba(255, 255, 255, .8);
+}

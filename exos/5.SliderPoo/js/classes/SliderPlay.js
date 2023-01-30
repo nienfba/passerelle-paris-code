@@ -1,17 +1,27 @@
+/**
+ * Exemple de classe enfant.
+ * Elle "extends" la classe Slider pour y rajouter des fonctionnalités 
+ * Avantage : pas de changement dans la classe mère... 
+ */
 
 class SliderPlay extends Slider {
 
-
+    /**
+     * Surcharge la méthode pour rajouter le play
+     */
     createInterface() {
 
+        // On appelle la méthode de l'objet parent
         super.createInterface();
 
         // On créé le bouton next
         this.btnPlay = document.createElement('button');
-        this.btnPlay.textContent = 'Play';
+        this.btnPlay.innerHTML = '<i class="icon-play"></>';
+        this.btnPlay.classList.add('play');
         this.btnPlay.addEventListener('click', this.play.bind(this));
 
-        this.divSlider.appendChild(this.btnPlay);
+        // On ajoute le bouton à l'interface mais en première position
+        this.divSlider.prepend(this.btnPlay);
 
         /**
         * @var {Number} identifiant du timer play
@@ -20,13 +30,16 @@ class SliderPlay extends Slider {
 
     }
 
+    /**
+    * Action bouton play 
+    */
     play(){
         if(this.playId == null) {
-            this.btnPlay.textContent = 'Pause';
+            this.btnPlay.innerHTML = '<i class="icon-pause"></>';
             this.playId = window.setInterval(this.next.bind(this),1000);
         }
         else {
-            this.btnPlay.textContent = 'Play';
+            this.btnPlay.innerHTML = '<i class="icon-play"></>';
             window.clearInterval(this.playId);
             this.playId = null;
         }
